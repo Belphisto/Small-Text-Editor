@@ -1,0 +1,17 @@
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.exe
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.deps.json
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.runtimeconfig.json
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.dll
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.pdb
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.MainForm.resources
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.Properties.Resources.resources
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.csproj.GenerateResource.cache
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.GeneratedMSBuildEditorConfig.editorconfig
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.AssemblyInfoInputs.cache
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.AssemblyInfo.cs
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.csproj.CoreCompileInputs.cache
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.dll
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\refint\SmallTextEditor.dll
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.pdb
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.genruntimeconfig.cache
+D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\ref\SmallTextEditor.dll
