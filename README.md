@@ -11,7 +11,8 @@ SDI представляет собой пользовательский инт�
 
 
 Сохранение файла происходит в директорию проекта 
-![image](https://github.com/Belphisto/Small-Text-Editor/assets/100871374/eea555e6-5fbb-455d-89f6-3237f9714393)
-![image](https://github.com/Belphisto/Small-Text-Editor/assets/100871374/f6ef84ac-cb68-475d-bc9b-5e9dc98e51ed)
+![image](https://github.com/Belphisto/Small-Text-Editor/assets/100871374/1128f9fc-edbf-480a-ad88-9d80ee9af4fe)
+
+![image](https://github.com/Belphisto/Small-Text-Editor/assets/100871374/330b9a0e-5efd-4582-86f3-b0fc85c32874)
 
 
