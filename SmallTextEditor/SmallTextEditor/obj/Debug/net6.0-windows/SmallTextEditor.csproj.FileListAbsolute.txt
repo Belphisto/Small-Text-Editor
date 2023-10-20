@@ -15,3 +15,21 @@ D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windo
 D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.pdb
 D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.genruntimeconfig.cache
 D:\GitHub\SmallTextReader\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\ref\SmallTextEditor.dll
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.exe
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.deps.json
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.runtimeconfig.json
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.dll
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\bin\Debug\net6.0-windows\SmallTextEditor.pdb
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.csproj.AssemblyReference.cache
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.MainForm.resources
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.Properties.Resources.resources
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.csproj.GenerateResource.cache
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.GeneratedMSBuildEditorConfig.editorconfig
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.AssemblyInfoInputs.cache
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.AssemblyInfo.cs
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.csproj.CoreCompileInputs.cache
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.dll
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\refint\SmallTextEditor.dll
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.pdb
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.genruntimeconfig.cache
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\ref\SmallTextEditor.dll
