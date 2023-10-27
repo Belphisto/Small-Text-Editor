@@ -1,15 +1,22 @@
 using System.Windows.Forms;
+using static System.Windows.Forms.DataFormats;
 
 namespace SmallTextEditor
 {
     public partial class MainForm : Form
     {
         string File_name = "Noname.rtf";
+
+
         public MainForm()
         {
             InitializeComponent();
             //openFileDialog1.InitialDirectory = System.IO.Directory.GetCurrentDirectory(); - директория по умолчанию
             openFileDialog1.InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments); //директория в "Мои документы"
+
+            statusStrip1.Items[0].Text = "Имя файла: " + Path.GetFileName(File_name);
+            statusStrip1.Items[1].Text = DateTime.Now.ToShortDateString();
+            statusStrip1.Items[2].Text = "Позиция: Строка " + 0 + ", Символ " + 0;
         }
 
         //создать новый файл
@@ -35,6 +42,7 @@ namespace SmallTextEditor
             // Очистить окно редактирования и установить имя файла в "Noname.rtf"
             RichTextBox1.Text = "";
             File_name = "Noname.rtf";
+            statusStrip1.Items[0].Text = "Имя файла: " + Path.GetFileName(File_name);
         }
 
         //открыть файл (директория "Мои документы" по умолчанию
@@ -50,6 +58,7 @@ namespace SmallTextEditor
             }
             else // Не ОК или еще что-то.
                 ;
+            statusStrip1.Items[0].Text = "Имя файла: " + Path.GetFileName(File_name);
         }
 
         //сохранить
@@ -63,6 +72,7 @@ namespace SmallTextEditor
             else
                 // Сохранить текст в файле.
                 RichTextBox1.SaveFile(File_name, RichTextBoxStreamType.RichText);
+            statusStrip1.Items[0].Text = "Имя файла: " + Path.GetFileName(File_name);
         }
 
         // Сохранить с именем.
@@ -78,7 +88,7 @@ namespace SmallTextEditor
             }
             else // Не ОК или еще что-то.
                 ;
-
+            statusStrip1.Items[0].Text = "Имя файла: " + Path.GetFileName(File_name);
         }
 
         private void exitStripMenuItem_Click(object sender, EventArgs e)
@@ -105,32 +115,103 @@ namespace SmallTextEditor
                 case 0: {/*Создать*/ newToolStripMenuItem_Click(sender, e); break; }
                 case 1: {/*Открыть*/ openToolStripMenuItem_Click(sender, e); break; }
                 case 2: {/*Сохранить*/ saveToolStripMenuItem_Click(sender, e); break; }
+                case 4: {/*Вырезать*/ cutToolStripMenuItem_Click(sender, e); break; }
+                case 5: {/*Копировать*/ copyToolStripMenuItem_Click(sender, e); break; }
+                case 6: {/*Вставить*/ pasteToolStripMenuItem_Click(sender, e); break; }
             };
         }
+
 
         //Обработчики событий группы команд "Правка" по работе с текстом
         //Вырезать
         private void cutToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RichTextBox1.Cut();
+            if (RichTextBox1.SelectionLength > 0 && Clipboard.ContainsText(TextDataFormat.Rtf))
+            {
+                Clipboard.SetData(DataFormats.Rtf, RichTextBox1.SelectedRtf);
+                RichTextBox1.SelectedRtf = "";
+            }
         }
 
         //Копировать
         private void copyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RichTextBox1.Copy();
+            // Получить формат представления текста в буфере как Rtf формат.
+            DataFormats.Format myFormat = DataFormats.GetFormat(DataFormats.Rtf);
+            // Проверить, есть ли выделение.
+            if (RichTextBox1.SelectionLength > 0)
+            {
+                Clipboard.SetData(myFormat.Name, RichTextBox1.SelectedRtf);
+            }
         }
 
         //Вставить
         private void pasteToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            RichTextBox1.Paste();
+            if (Clipboard.ContainsText(TextDataFormat.Rtf))
+            {
+                RichTextBox1.Paste(DataFormats.GetFormat(DataFormats.Rtf));
+            }
         }
 
         //Выделить все
         private void selectAllToolStripMenuItem_Click(object sender, EventArgs e)
         {
             RichTextBox1.SelectAll();
+        }
+
+
+        // Обработчики событий кнопок контекстного меню
+        // дублируют пункты меню.
+        private void contextMenuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+            switch (contextMenuStrip1.Items.IndexOf(e.ClickedItem))
+            {
+                case 0: {/*Вырезать*/ cutToolStripMenuItem_Click(sender, e); break; }
+                case 1: {/*Копировать*/ copyToolStripMenuItem_Click(sender, e); break; }
+                case 2: {/*Вставить*/ pasteToolStripMenuItem_Click(sender, e); break; }
+                case 3: {/*Выделить все*/ selectAllToolStripMenuItem_Click(sender, e); break; }
+            };
+        }
+
+        // изменить цвет шрифта выбранного текста
+        private void colorFontToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Применить выбранный цвет к выделенному тексту
+                RichTextBox1.SelectionColor = colorDialog1.Color;
+            }
+        }
+
+        //изменить цвет подложки выбранного текста
+        private void colorBackgroundToolStripButton2_Click(object sender, EventArgs e)
+        {
+            if (colorDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Применить выбранный цвет к выделенному тексту
+                RichTextBox1.SelectionBackColor = colorDialog1.Color;
+            }
+        }
+
+        //изменить шрифт выбранного текста
+        private void fontToolStripButton1_Click(object sender, EventArgs e)
+        {
+            // установить текущий шрифт текста в диалоге
+            fontDialog1.Font = RichTextBox1.SelectionFont;
+
+            if (fontDialog1.ShowDialog() == DialogResult.OK)
+            {
+                RichTextBox1.SelectionFont = fontDialog1.Font;
+            }
+        }
+
+        private void RichTextBox1_SelectionChanged(object sender, EventArgs e)
+        {
+            int lineNumber = RichTextBox1.GetLineFromCharIndex(RichTextBox1.SelectionStart) + 1;
+            int columnNumber = RichTextBox1.SelectionStart - RichTextBox1.GetFirstCharIndexFromLine(lineNumber - 1) + 1;
+
+            statusStrip1.Items[2].Text = "Позиция: Строка " + lineNumber + ", Символ " + columnNumber;
         }
     }
 

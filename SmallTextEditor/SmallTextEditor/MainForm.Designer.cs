@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuStrip1 = new MenuStrip();
             fileToolStripMenuItem = new ToolStripMenuItem();
@@ -48,11 +49,32 @@
             newToolStripButton = new ToolStripButton();
             openToolStripButton = new ToolStripButton();
             saveToolStripButton = new ToolStripButton();
+            toolStripSeparator2 = new ToolStripSeparator();
+            cutToolStripButton = new ToolStripButton();
+            copyToolStripButton = new ToolStripButton();
+            pasteToolStripButton = new ToolStripButton();
+            toolStripSeparator3 = new ToolStripSeparator();
+            colorFontToolStripButton1 = new ToolStripButton();
+            colorBackgroundToolStripButton2 = new ToolStripButton();
+            fontToolStripButton1 = new ToolStripButton();
             RichTextBox1 = new RichTextBox();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            cutContextToolStripMenuItem = new ToolStripMenuItem();
+            copyContextToolStripMenuItem1 = new ToolStripMenuItem();
+            pasteContextToolStripMenuItem = new ToolStripMenuItem();
+            selectallContextToolStripMenuItem = new ToolStripMenuItem();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
+            colorDialog1 = new ColorDialog();
+            fontDialog1 = new FontDialog();
+            statusStrip1 = new StatusStrip();
+            fileNameToolStripStatusLabel1 = new ToolStripStatusLabel();
+            dateToolStripStatusLabel2 = new ToolStripStatusLabel();
+            cursorToolStripStatusLabel3 = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
+            contextMenuStrip1.SuspendLayout();
+            statusStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -133,7 +155,7 @@
             cutToolStripMenuItem.ImageTransparentColor = Color.Magenta;
             cutToolStripMenuItem.Name = "cutToolStripMenuItem";
             cutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
-            cutToolStripMenuItem.Size = new Size(185, 26);
+            cutToolStripMenuItem.Size = new Size(181, 22);
             cutToolStripMenuItem.Text = "Вырезать";
             cutToolStripMenuItem.Click += cutToolStripMenuItem_Click;
             // 
@@ -143,7 +165,7 @@
             copyToolStripMenuItem.ImageTransparentColor = Color.Magenta;
             copyToolStripMenuItem.Name = "copyToolStripMenuItem";
             copyToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            copyToolStripMenuItem.Size = new Size(185, 26);
+            copyToolStripMenuItem.Size = new Size(181, 22);
             copyToolStripMenuItem.Text = "Копировать";
             copyToolStripMenuItem.Click += copyToolStripMenuItem_Click;
             // 
@@ -153,19 +175,19 @@
             pasteToolStripMenuItem.ImageTransparentColor = Color.Magenta;
             pasteToolStripMenuItem.Name = "pasteToolStripMenuItem";
             pasteToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
-            pasteToolStripMenuItem.Size = new Size(185, 26);
+            pasteToolStripMenuItem.Size = new Size(181, 22);
             pasteToolStripMenuItem.Text = "Вставить";
             pasteToolStripMenuItem.Click += pasteToolStripMenuItem_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(182, 6);
+            toolStripSeparator4.Size = new Size(178, 6);
             // 
             // selectAllToolStripMenuItem
             // 
             selectAllToolStripMenuItem.Name = "selectAllToolStripMenuItem";
-            selectAllToolStripMenuItem.Size = new Size(185, 26);
+            selectAllToolStripMenuItem.Size = new Size(181, 22);
             selectAllToolStripMenuItem.Text = "Выделить все";
             selectAllToolStripMenuItem.Click += selectAllToolStripMenuItem_Click;
             // 
@@ -180,7 +202,7 @@
             // 
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton, toolStripSeparator2, cutToolStripButton, copyToolStripButton, pasteToolStripButton, toolStripSeparator3, colorFontToolStripButton1, colorBackgroundToolStripButton2, fontToolStripButton1 });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(700, 27);
@@ -215,9 +237,77 @@
             saveToolStripButton.Size = new Size(24, 24);
             saveToolStripButton.Text = "Сохранить";
             // 
+            // toolStripSeparator2
+            // 
+            toolStripSeparator2.Name = "toolStripSeparator2";
+            toolStripSeparator2.Size = new Size(6, 27);
+            // 
+            // cutToolStripButton
+            // 
+            cutToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            cutToolStripButton.Image = (Image)resources.GetObject("cutToolStripButton.Image");
+            cutToolStripButton.ImageTransparentColor = Color.Magenta;
+            cutToolStripButton.Name = "cutToolStripButton";
+            cutToolStripButton.Size = new Size(24, 24);
+            cutToolStripButton.Text = "Вы&резать";
+            // 
+            // copyToolStripButton
+            // 
+            copyToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            copyToolStripButton.Image = (Image)resources.GetObject("copyToolStripButton.Image");
+            copyToolStripButton.ImageTransparentColor = Color.Magenta;
+            copyToolStripButton.Name = "copyToolStripButton";
+            copyToolStripButton.Size = new Size(24, 24);
+            copyToolStripButton.Text = "&Копировать";
+            // 
+            // pasteToolStripButton
+            // 
+            pasteToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
+            pasteToolStripButton.Image = (Image)resources.GetObject("pasteToolStripButton.Image");
+            pasteToolStripButton.ImageTransparentColor = Color.Magenta;
+            pasteToolStripButton.Name = "pasteToolStripButton";
+            pasteToolStripButton.Size = new Size(24, 24);
+            pasteToolStripButton.Text = "&Вставить";
+            // 
+            // toolStripSeparator3
+            // 
+            toolStripSeparator3.Name = "toolStripSeparator3";
+            toolStripSeparator3.Size = new Size(6, 27);
+            // 
+            // colorFontToolStripButton1
+            // 
+            colorFontToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            colorFontToolStripButton1.Image = (Image)resources.GetObject("colorFontToolStripButton1.Image");
+            colorFontToolStripButton1.ImageTransparentColor = Color.Magenta;
+            colorFontToolStripButton1.Name = "colorFontToolStripButton1";
+            colorFontToolStripButton1.Size = new Size(122, 24);
+            colorFontToolStripButton1.Text = "Выбрать цвет текста";
+            colorFontToolStripButton1.Click += colorFontToolStripButton1_Click;
+            // 
+            // colorBackgroundToolStripButton2
+            // 
+            colorBackgroundToolStripButton2.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            colorBackgroundToolStripButton2.Image = (Image)resources.GetObject("colorBackgroundToolStripButton2.Image");
+            colorBackgroundToolStripButton2.ImageTransparentColor = Color.Magenta;
+            colorBackgroundToolStripButton2.Name = "colorBackgroundToolStripButton2";
+            colorBackgroundToolStripButton2.Size = new Size(144, 24);
+            colorBackgroundToolStripButton2.Text = "Выбрать цвет подложки";
+            colorBackgroundToolStripButton2.Click += colorBackgroundToolStripButton2_Click;
+            // 
+            // fontToolStripButton1
+            // 
+            fontToolStripButton1.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            fontToolStripButton1.Image = (Image)resources.GetObject("fontToolStripButton1.Image");
+            fontToolStripButton1.ImageTransparentColor = Color.Magenta;
+            fontToolStripButton1.Name = "fontToolStripButton1";
+            fontToolStripButton1.Size = new Size(100, 24);
+            fontToolStripButton1.Text = "Выбрать шрифт";
+            fontToolStripButton1.Click += fontToolStripButton1_Click;
+            // 
             // RichTextBox1
             // 
             RichTextBox1.AutoWordSelection = true;
+            RichTextBox1.ContextMenuStrip = contextMenuStrip1;
             RichTextBox1.Cursor = Cursors.IBeam;
             RichTextBox1.Dock = DockStyle.Fill;
             RichTextBox1.Location = new Point(0, 51);
@@ -226,17 +316,80 @@
             RichTextBox1.Size = new Size(700, 287);
             RichTextBox1.TabIndex = 4;
             RichTextBox1.Text = "";
+            RichTextBox1.SelectionChanged += RichTextBox1_SelectionChanged;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { cutContextToolStripMenuItem, copyContextToolStripMenuItem1, pasteContextToolStripMenuItem, selectallContextToolStripMenuItem });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(149, 92);
+            contextMenuStrip1.ItemClicked += contextMenuStrip1_ItemClicked;
+            // 
+            // cutContextToolStripMenuItem
+            // 
+            cutContextToolStripMenuItem.Name = "cutContextToolStripMenuItem";
+            cutContextToolStripMenuItem.Size = new Size(148, 22);
+            cutContextToolStripMenuItem.Text = "Вырезать";
+            // 
+            // copyContextToolStripMenuItem1
+            // 
+            copyContextToolStripMenuItem1.Name = "copyContextToolStripMenuItem1";
+            copyContextToolStripMenuItem1.Size = new Size(148, 22);
+            copyContextToolStripMenuItem1.Text = "Копировать";
+            // 
+            // pasteContextToolStripMenuItem
+            // 
+            pasteContextToolStripMenuItem.Name = "pasteContextToolStripMenuItem";
+            pasteContextToolStripMenuItem.Size = new Size(148, 22);
+            pasteContextToolStripMenuItem.Text = "Вставить";
+            // 
+            // selectallContextToolStripMenuItem
+            // 
+            selectallContextToolStripMenuItem.Name = "selectallContextToolStripMenuItem";
+            selectallContextToolStripMenuItem.Size = new Size(148, 22);
+            selectallContextToolStripMenuItem.Text = "Выделить все";
             // 
             // openFileDialog1
             // 
             openFileDialog1.FileName = "openFileDialog1";
             openFileDialog1.Filter = "Rtf файлы (*.rtf)|*.rtf|Все файлы (*.*)|*.*";
             // 
+            // statusStrip1
+            // 
+            statusStrip1.Items.AddRange(new ToolStripItem[] { fileNameToolStripStatusLabel1, dateToolStripStatusLabel2, cursorToolStripStatusLabel3 });
+            statusStrip1.Location = new Point(0, 316);
+            statusStrip1.Name = "statusStrip1";
+            statusStrip1.Size = new Size(700, 22);
+            statusStrip1.TabIndex = 5;
+            statusStrip1.Text = "statusStrip1";
+            // 
+            // fileNameToolStripStatusLabel1
+            // 
+            fileNameToolStripStatusLabel1.AutoSize = false;
+            fileNameToolStripStatusLabel1.Name = "fileNameToolStripStatusLabel1";
+            fileNameToolStripStatusLabel1.Size = new Size(255, 17);
+            fileNameToolStripStatusLabel1.Text = "Имя файла";
+            // 
+            // dateToolStripStatusLabel2
+            // 
+            dateToolStripStatusLabel2.AutoSize = false;
+            dateToolStripStatusLabel2.Name = "dateToolStripStatusLabel2";
+            dateToolStripStatusLabel2.Size = new Size(70, 17);
+            dateToolStripStatusLabel2.Text = "Дата";
+            // 
+            // cursorToolStripStatusLabel3
+            // 
+            cursorToolStripStatusLabel3.AutoSize = false;
+            cursorToolStripStatusLabel3.Name = "cursorToolStripStatusLabel3";
+            cursorToolStripStatusLabel3.Size = new Size(255, 17);
+            cursorToolStripStatusLabel3.Text = "строка, позиция";
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(700, 338);
+            Controls.Add(statusStrip1);
             Controls.Add(RichTextBox1);
             Controls.Add(toolStrip1);
             Controls.Add(menuStrip1);
@@ -247,6 +400,9 @@
             menuStrip1.PerformLayout();
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
+            contextMenuStrip1.ResumeLayout(false);
+            statusStrip1.ResumeLayout(false);
+            statusStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -275,5 +431,24 @@
         private RichTextBox RichTextBox1;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
+        private ToolStripSeparator toolStripSeparator2;
+        private ToolStripButton cutToolStripButton;
+        private ToolStripButton copyToolStripButton;
+        private ToolStripButton pasteToolStripButton;
+        private ToolStripSeparator toolStripSeparator3;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem cutContextToolStripMenuItem;
+        private ToolStripMenuItem copyContextToolStripMenuItem1;
+        private ToolStripMenuItem pasteContextToolStripMenuItem;
+        private ToolStripMenuItem selectallContextToolStripMenuItem;
+        private ToolStripButton colorFontToolStripButton1;
+        private ToolStripButton colorBackgroundToolStripButton2;
+        private ColorDialog colorDialog1;
+        private FontDialog fontDialog1;
+        private ToolStripButton fontToolStripButton1;
+        private StatusStrip statusStrip1;
+        private ToolStripStatusLabel fileNameToolStripStatusLabel1;
+        private ToolStripStatusLabel dateToolStripStatusLabel2;
+        private ToolStripStatusLabel cursorToolStripStatusLabel3;
     }
 }
