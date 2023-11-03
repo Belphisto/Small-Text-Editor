@@ -111,8 +111,10 @@
             // 
             // Dialog_Data
             // 
+            AcceptButton = OkButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            CancelButton = CancelButton;
             ClientSize = new Size(257, 378);
             Controls.Add(ChooseTextBox);
             Controls.Add(TodayTextBox);
@@ -122,6 +124,9 @@
             Controls.Add(monthCalendar1);
             Controls.Add(label2);
             Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "Dialog_Data";
             Text = "Dialog_Data";
             Load += Dialog_Data_Load;
