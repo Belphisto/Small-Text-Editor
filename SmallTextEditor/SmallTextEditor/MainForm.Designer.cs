@@ -45,6 +45,9 @@
             toolStripSeparator4 = new ToolStripSeparator();
             selectAllToolStripMenuItem = new ToolStripMenuItem();
             exitStripMenuItem = new ToolStripMenuItem();
+            диалогиToolStripMenuItem = new ToolStripMenuItem();
+            DialogTextToolStripMenuItem = new ToolStripMenuItem();
+            DialogDateToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1 = new ToolStrip();
             newToolStripButton = new ToolStripButton();
             openToolStripButton = new ToolStripButton();
@@ -57,6 +60,10 @@
             colorFontToolStripButton1 = new ToolStripButton();
             colorBackgroundToolStripButton2 = new ToolStripButton();
             fontToolStripButton1 = new ToolStripButton();
+            toolStripSeparator5 = new ToolStripSeparator();
+            InputWordToolStripTextBox = new ToolStripTextBox();
+            toolStripSeparator6 = new ToolStripSeparator();
+            FindToolStripButton = new ToolStripButton();
             RichTextBox1 = new RichTextBox();
             contextMenuStrip1 = new ContextMenuStrip(components);
             cutContextToolStripMenuItem = new ToolStripMenuItem();
@@ -71,6 +78,7 @@
             fileNameToolStripStatusLabel1 = new ToolStripStatusLabel();
             dateToolStripStatusLabel2 = new ToolStripStatusLabel();
             cursorToolStripStatusLabel3 = new ToolStripStatusLabel();
+            CountToolStripStatusLabel = new ToolStripStatusLabel();
             menuStrip1.SuspendLayout();
             toolStrip1.SuspendLayout();
             contextMenuStrip1.SuspendLayout();
@@ -80,11 +88,11 @@
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
-            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, exitStripMenuItem });
+            menuStrip1.Items.AddRange(new ToolStripItem[] { fileToolStripMenuItem, editToolStripMenuItem, exitStripMenuItem, диалогиToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
             menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(700, 24);
+            menuStrip1.Size = new Size(762, 24);
             menuStrip1.TabIndex = 0;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -198,14 +206,37 @@
             exitStripMenuItem.Text = "Выход";
             exitStripMenuItem.Click += exitStripMenuItem_Click;
             // 
+            // диалогиToolStripMenuItem
+            // 
+            диалогиToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { DialogTextToolStripMenuItem, DialogDateToolStripMenuItem });
+            диалогиToolStripMenuItem.Name = "диалогиToolStripMenuItem";
+            диалогиToolStripMenuItem.Size = new Size(66, 20);
+            диалогиToolStripMenuItem.Text = "Диалоги";
+            // 
+            // DialogTextToolStripMenuItem
+            // 
+            DialogTextToolStripMenuItem.Name = "DialogTextToolStripMenuItem";
+            DialogTextToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.T;
+            DialogTextToolStripMenuItem.Size = new Size(187, 22);
+            DialogTextToolStripMenuItem.Text = "Диалог_текст";
+            DialogTextToolStripMenuItem.Click += DialogTextToolStripMenuItem_Click;
+            // 
+            // DialogDateToolStripMenuItem
+            // 
+            DialogDateToolStripMenuItem.Name = "DialogDateToolStripMenuItem";
+            DialogDateToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.D;
+            DialogDateToolStripMenuItem.Size = new Size(187, 22);
+            DialogDateToolStripMenuItem.Text = "Диалог_дата";
+            DialogDateToolStripMenuItem.Click += DialogDateToolStripMenuItem_Click;
+            // 
             // toolStrip1
             // 
             toolStrip1.GripStyle = ToolStripGripStyle.Hidden;
             toolStrip1.ImageScalingSize = new Size(20, 20);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton, toolStripSeparator2, cutToolStripButton, copyToolStripButton, pasteToolStripButton, toolStripSeparator3, colorFontToolStripButton1, colorBackgroundToolStripButton2, fontToolStripButton1 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { newToolStripButton, openToolStripButton, saveToolStripButton, toolStripSeparator2, cutToolStripButton, copyToolStripButton, pasteToolStripButton, toolStripSeparator3, colorFontToolStripButton1, colorBackgroundToolStripButton2, fontToolStripButton1, toolStripSeparator5, InputWordToolStripTextBox, toolStripSeparator6, FindToolStripButton });
             toolStrip1.Location = new Point(0, 24);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(700, 27);
+            toolStrip1.Size = new Size(762, 27);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             toolStrip1.ItemClicked += toolStrip1_ItemClicked;
@@ -304,6 +335,31 @@
             fontToolStripButton1.Text = "Выбрать шрифт";
             fontToolStripButton1.Click += fontToolStripButton1_Click;
             // 
+            // toolStripSeparator5
+            // 
+            toolStripSeparator5.Name = "toolStripSeparator5";
+            toolStripSeparator5.Size = new Size(6, 27);
+            // 
+            // InputWordToolStripTextBox
+            // 
+            InputWordToolStripTextBox.Name = "InputWordToolStripTextBox";
+            InputWordToolStripTextBox.Size = new Size(100, 27);
+            // 
+            // toolStripSeparator6
+            // 
+            toolStripSeparator6.Name = "toolStripSeparator6";
+            toolStripSeparator6.Size = new Size(6, 27);
+            // 
+            // FindToolStripButton
+            // 
+            FindToolStripButton.DisplayStyle = ToolStripItemDisplayStyle.Text;
+            FindToolStripButton.Image = (Image)resources.GetObject("FindToolStripButton.Image");
+            FindToolStripButton.ImageTransparentColor = Color.Magenta;
+            FindToolStripButton.Name = "FindToolStripButton";
+            FindToolStripButton.Size = new Size(45, 24);
+            FindToolStripButton.Text = "Найти";
+            FindToolStripButton.Click += FindToolStripButton_Click;
+            // 
             // RichTextBox1
             // 
             RichTextBox1.AutoWordSelection = true;
@@ -313,7 +369,7 @@
             RichTextBox1.Location = new Point(0, 51);
             RichTextBox1.Margin = new Padding(3, 2, 3, 2);
             RichTextBox1.Name = "RichTextBox1";
-            RichTextBox1.Size = new Size(700, 287);
+            RichTextBox1.Size = new Size(762, 287);
             RichTextBox1.TabIndex = 4;
             RichTextBox1.Text = "";
             RichTextBox1.SelectionChanged += RichTextBox1_SelectionChanged;
@@ -356,10 +412,10 @@
             // 
             // statusStrip1
             // 
-            statusStrip1.Items.AddRange(new ToolStripItem[] { fileNameToolStripStatusLabel1, dateToolStripStatusLabel2, cursorToolStripStatusLabel3 });
+            statusStrip1.Items.AddRange(new ToolStripItem[] { fileNameToolStripStatusLabel1, dateToolStripStatusLabel2, cursorToolStripStatusLabel3, CountToolStripStatusLabel });
             statusStrip1.Location = new Point(0, 316);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(700, 22);
+            statusStrip1.Size = new Size(762, 22);
             statusStrip1.TabIndex = 5;
             statusStrip1.Text = "statusStrip1";
             // 
@@ -384,11 +440,17 @@
             cursorToolStripStatusLabel3.Size = new Size(255, 17);
             cursorToolStripStatusLabel3.Text = "строка, позиция";
             // 
+            // CountToolStripStatusLabel
+            // 
+            CountToolStripStatusLabel.AutoSize = false;
+            CountToolStripStatusLabel.Name = "CountToolStripStatusLabel";
+            CountToolStripStatusLabel.Size = new Size(146, 17);
+            // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(700, 338);
+            ClientSize = new Size(762, 338);
             Controls.Add(statusStrip1);
             Controls.Add(RichTextBox1);
             Controls.Add(toolStrip1);
@@ -450,5 +512,13 @@
         private ToolStripStatusLabel fileNameToolStripStatusLabel1;
         private ToolStripStatusLabel dateToolStripStatusLabel2;
         private ToolStripStatusLabel cursorToolStripStatusLabel3;
+        private ToolStripMenuItem диалогиToolStripMenuItem;
+        private ToolStripMenuItem DialogTextToolStripMenuItem;
+        private ToolStripMenuItem DialogDateToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator5;
+        private ToolStripTextBox InputWordToolStripTextBox;
+        private ToolStripSeparator toolStripSeparator6;
+        private ToolStripButton FindToolStripButton;
+        private ToolStripStatusLabel CountToolStripStatusLabel;
     }
 }

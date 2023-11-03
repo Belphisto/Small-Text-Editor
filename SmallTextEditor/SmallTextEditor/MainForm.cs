@@ -213,6 +213,87 @@ namespace SmallTextEditor
 
             statusStrip1.Items[2].Text = "Позиция: Строка " + lineNumber + ", Символ " + columnNumber;
         }
+
+        private void DialogTextToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //Получить выделенный текст из текстового поля родительской формы
+            string selectedText = RichTextBox1.SelectedText;
+
+            // Создать диалоговую форму
+            Dialog_Text textForm = new Dialog_Text(selectedText);
+
+            // Отобразить диалоговую форму
+            if (textForm.ShowDialog() == DialogResult.OK)
+            {
+                // Получить измененный текст из диалоговой формы
+                string newText = textForm.NewText;
+
+                // Заменить выделенный текст в текстовом поле родительской формы новым текстом
+                RichTextBox1.SelectedText = newText;
+            }
+        }
+
+        private void DialogDateToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Dialog_Data dataForm = new Dialog_Data();
+            // Отобразить диалоговую форму
+            if (dataForm.ShowDialog() == DialogResult.OK)
+            {
+                // Получить текст даты из диалоговой формы
+                string newText = dataForm.SelectedDate;
+
+                // Определить позицию курсора
+                int cursorPosition = RichTextBox1.SelectionStart;
+
+                // Вставить новый текст в позицию курсора
+                RichTextBox1.Text = RichTextBox1.Text.Insert(cursorPosition, newText);
+            }
+        }
+
+        private void FindToolStripButton_Click(object sender, EventArgs e)
+        {
+            string text = RichTextBox1.Text;
+            string word = InputWordToolStripTextBox.Text;
+            if (text != "" && word != "")
+            {
+                int count = CountOccurrences();
+                CountToolStripStatusLabel.Text = $"Встретилось: {count} раз";
+            }
+            
+        }
+
+        //Задание для самостоятельной работы. Вариант 3
+        // Метод, который находит, сколько раз входит в текст некоторое произвольное слово
+        // а также выделяет все найденные вхождения цветом Color.Aqua
+        public int CountOccurrences()
+        {
+            string where = RichTextBox1.Text;
+            string what = InputWordToolStripTextBox.Text;
+
+            int count = 0;
+            int start = 0;
+
+            // Сброс выделений (убираем все выделения)
+            // чтобы при повторном поиске было корректное выделение цветом найденных слов
+            RichTextBox1.SelectionStart = 0;
+            RichTextBox1.SelectionLength = RichTextBox1.Text.Length;
+            RichTextBox1.SelectionBackColor = RichTextBox1.BackColor;
+
+            int ind = where.IndexOf(what, start);
+
+            while (ind != -1)
+            {
+                count++;
+
+                RichTextBox1.Select(ind, what.Length);
+                RichTextBox1.SelectionBackColor = System.Drawing.Color.Aqua;
+
+                start = ind +what.Length;
+                ind = RichTextBox1.Text.IndexOf(what, start);
+            }
+
+            return count;
+        }
     }
 
 }

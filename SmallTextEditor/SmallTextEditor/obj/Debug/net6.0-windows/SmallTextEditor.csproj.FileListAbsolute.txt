@@ -33,3 +33,5 @@ E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTex
 E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.pdb
 E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.genruntimeconfig.cache
 E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\ref\SmallTextEditor.dll
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.Dialog_Text.resources
+E:\Лена документы\GitHub\Small-Text-Editor\SmallTextEditor\SmallTextEditor\obj\Debug\net6.0-windows\SmallTextEditor.Dialog_Data.resources
